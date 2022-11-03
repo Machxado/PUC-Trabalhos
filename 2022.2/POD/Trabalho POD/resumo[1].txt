@@ -1,0 +1,14 @@
+##Resumo:
+@autores: PedroLunelli VitorMachado
+O trabalho acerca do desenvolvimento de um sistema para clínicas médicas foi extremamente desafiador e enriquecedor, pois em uma única aplicação nos fez revisitar todos os conteúdos e 
+conceitos vistos acerca de orientação a objetos, fazendo com que os aplicássemos de maneira prática na solução de um possível problema real, além de incentivar-nos a ir além do conteúdo 
+passado em sala de aula e de exercitarmos a criatividade para pensarmos em diferentes soluções para esse mesmo problema. As dificuldades encontradas foram referentes a forma como iriámos 
+organizar a composição das classes e suas heranças, a implementação e o entendimento de classes abstratas, a manipulação de arquivos e a identificação e tratamento dos possíveis erros. 
+Um ponto interessante da execução desse trabalho foi o uso do GitHub, ferramenta vista em sala de aula, e que até então nos demais trabalhos acadêmicos, nunca havíamos utilizado na prática.
+ Ademais, outro ponto interessante foi a liberdade para construção de diferentes soluções dentro da perspectiva e interpretação de cada dupla. Em nosso caso, por exemplo, optamos por 
+utilizar uma classe a mais do que a prevista pelo enunciado, chamada de Funcionários, em que nela colocamos médicos enfermeiros e secretarias a fim de facilitar nossa manipulação e 
+organização.
+Por fim , sobre um panorama geral do trabalho, avaliamos que foi um bom exercício para simularmos 
+um problema e uma oportunidade de solução na vida real, em que do ponto de vista de um protótipo, o programa desenvolvido conseguiu atingir algumas das 
+expectativas, tendo em vista que nem todas as funcionalidades exigidas foram executadas em sua em sua totalidade com sucesso, em função de alguns erros de 
+leitura de arquivos que os autores não identificaram as razões na main, já que fora todas as funcionalidades do programa  foram testadas e estão funcionando.

@@ -1,0 +1,42 @@
+.data
+
+	Array:
+		.align 2
+		.space 16 #4 inteiros
+.text
+	.main:
+		jal preencher
+		jal imprimir
+		li $v0,10
+		syscall
+	
+		
+			
+	preencher:
+		move $t0,$zero #indice
+		li $t1,16 #tamvetor
+		move $t2,$zero #valor
+		
+		loop:
+			beq $t0,$t1,volta
+			sw $t2,Array($t0)
+			addi $t0,$t0,4
+			addi $t2,$t2,1
+			j loop
+		
+		volta:
+			jr $ra
+		
+	imprimir: 
+		move $t0,$zero #vezes
+		li $t1,16 #tamvetor
+		
+		loop2:
+			beq $t0,$t1,volta2
+			li $v0,1
+			lw $a0,Array($t0)
+			syscall
+			addi $t0,$t0,4
+			j loop2
+		volta2:
+			jr $ra

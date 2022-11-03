@@ -1,0 +1,2 @@
+from ClinicaSys import Classes
+from ClinicaSys import TratamentoErros

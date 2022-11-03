@@ -1,0 +1,4 @@
+meu arquivo de teste
+NOVALINHA
+linhasX
+LINHASY
