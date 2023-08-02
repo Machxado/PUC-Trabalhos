@@ -1,0 +1,1 @@
+Professor, nosso código não pede uma entrada na questão do tamanho da matriz ele presume que: se eu tenho um vetor contendo 5 respostas minha matriz é 5x5

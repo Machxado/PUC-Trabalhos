@@ -1,0 +1,65 @@
+def gauss(A, b):
+    n = len(b)
+
+    # Eliminação Gaussiana
+    for i in range(n):
+        # Encontra o pivô (elemento da diagonal principal)
+        pivot = A[i][i]
+
+        # Se o pivô for zero, troca de linha com a próxima linha que tem um elemento não nulo na mesma coluna
+        if pivot == 0:
+            for j in range(i+1, n):
+                if A[j][i] != 0:
+                    A[i], A[j] = A[j], A[i]
+                    b[i], b[j] = b[j], b[i]
+                    pivot = A[i][i]
+                    break
+            # Se todas as entradas na coluna forem nulas, a matriz é singular
+            if pivot == 0:
+                raise ValueError("A matriz é singular")
+
+        # Divide a linha pelo pivô para ficar variável ficar = 1
+        A[i] = [round(x / pivot,2) for x in A[i]]
+        b[i] = round(b[i]/pivot,2)
+
+        # Zera os elementos abaixo do pivô na coluna i transformando-o em triangular superior
+        for j in range(i+1, n):
+            fator = (A[j][i])*(-1)    #fator é o valor que devemos mult a Linha x para zerar a variável
+            auxA=[round(x*fator,2) for x in A[i]]
+            auxb=round(b[i]*fator,2)
+            A[j]=[A[j][x]+auxA[x] for x in range(0,n)]
+            b[j]+= auxb
+            auxA.clear()
+
+        for j,k in zip(matriz,b):
+            print(j,'  | ',k)
+        print('\n')
+
+    # Retrosubstituição
+    x = [None]*n    #x armazena o resultado da anterior
+    for i in range(n-1,-1,-1):
+        if i == n-1:
+            x[i] = b[i]
+        else:
+            for j in range(n-1,-1,-1):
+                if x[j] != None:
+                    A[i][j] = round(A[i][j] * x[j],2)
+            sublist=A[i][:i]+A[i][i+1:]
+            b[i]-=round(sum(sublist),2)
+            x[i]=b[i]
+    return f'Resposta: {x}'
+
+
+respostas = list(map(int,input('Digite os valores do resultado da matriz (separados por ",")\n').split(',')))
+tamanho=len(respostas)
+valores = input('Digite os valores da matriz (separados por ",")(será preenchido no eixo das linhas)\n')
+matriz=[None]*tamanho
+for i in range(0,tamanho):
+    matriz[i]=list(map(int,valores.split(',')[i*tamanho:i*tamanho+(tamanho)]))
+
+print('Matriz:')
+for i in matriz:
+    print(i)
+print('\nResolução:')
+print(gauss(matriz,respostas))
+
